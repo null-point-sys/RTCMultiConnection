@@ -293,12 +293,12 @@ input[disabled], button[disabled] {
 </head>
 <body>
   <header style="margin-bottom: 20px;">
-    <img class="logo" src="/demos/logo.png" alt="RTCMultiConnection" /> <span class="logo-text">Dashboard Example</span>
+    <img class="logo" src="/demos/logo.png" alt="RTCMultiConnection" /> <span class="logo-text">Dashboard</span>
 
     <div style="float: right;margin-top: 15px;">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#startRoomModel">Create A New Room</button>
-      <button id="btn-show-join-hidden-room" class="top-span btn btn-secondary" data-toggle="modal" data-target="#joinRoomModel">Join A Room</button>
-      <span class="top-span">Active rooms: <span id="active-rooms">0</span></span>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#startRoomModel">Crea una nueva sala</button>
+      <button id="btn-show-join-hidden-room" class="top-span btn btn-secondary" data-toggle="modal" data-target="#joinRoomModel">Ingresa a una sala</button>
+      <span class="top-span">Salas activas: <span id="active-rooms">0</span></span>
     </div>
   </header>
 
@@ -306,7 +306,7 @@ input[disabled], button[disabled] {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="startRoomModelLabel">Create A New Room</h5>
+          <h5 class="modal-title" id="startRoomModelLabel">Crea tu sala</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -315,35 +315,35 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid" class="col-form-label">Enter Room ID:</label>
+                <label for="txt-roomid" class="col-form-label">Ingresa Room ID:</label>
                 <input type="text" class="form-control" id="txt-roomid">
               </p>
 
               <p>
-                <label for="txt-user-name" class="col-form-label">Enter Your Name:</label>
+                <label for="txt-user-name" class="col-form-label">Ingresa tu nombre:</label>
                 <input type="text" class="form-control" id="txt-user-name">
               </p>
 
               <p style="display: none;">
-                <label for="txt-room-password" class="col-form-label">Enter Room Password:</label>
+                <label for="txt-room-password" class="col-form-label">Ingresa Password de la sala:</label>
                 <input type="text" class="form-control" id="txt-room-password">
               </p>
 
-              <a href="" style="float: right; margin-bottom: 10px; font-size: 14px;" onclick="event.preventDefault();$('.more-options').show();$(this).hide();">Show More Options</a>
+              <a href="" style="float: right; margin-bottom: 10px; font-size: 14px;" onclick="event.preventDefault();$('.more-options').show();$(this).hide();">Más opciones</a>
 
               <p class="more-options" style="margin-bottom: 0; display: none;">
-                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Set Room Password?</label>
+                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Elegir un Password para la sala?</label>
               </p>
 
               <p class="more-options" style="margin-top: 0; margin-bottom: 0; display: none;">
-                <label class="col-form-label"><input type="checkbox" id="chk-hidden-room"> Hidden Room? (Hide from the list)</label>
+                <label class="col-form-label"><input type="checkbox" id="chk-hidden-room"> Ocultar Sala? (Ocultar de la lista)</label>
               </p>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="btn-create-room">Create</button>
+          <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="btn-create-room">Crear</button>
         </div>
       </div>
     </div>
@@ -353,7 +353,7 @@ input[disabled], button[disabled] {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="joinRoomModelLabel">Join A Room</h5>
+          <h5 class="modal-title" id="joinRoomModelLabel">Ingresa a una sala</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -367,20 +367,20 @@ input[disabled], button[disabled] {
               </p>
 
               <p>
-                <label for="txt-user-name-hidden" class="col-form-label">Enter Your Name:</label>
+                <label for="txt-user-name-hidden" class="col-form-label">Ingresa tu nombre:</label>
                 <input type="text" class="form-control" id="txt-user-name-hidden">
               </p>
 
               <p style="display: none;">
-                <label for="txt-room-password-hidden" class="col-form-label">Enter Room Password:</label>
+                <label for="txt-room-password-hidden" class="col-form-label">Ingresa Password de la sala:</label>
                 <input type="text" class="form-control" id="txt-room-password-hidden">
               </p>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="btn-join-hidden-room">Join</button>
+          <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="btn-join-hidden-room">Ingresar</button>
         </div>
       </div>
     </div>
@@ -391,7 +391,7 @@ input[disabled], button[disabled] {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="alert-title">Alert</h5>
+                        <h5 class="modal-title" id="alert-title">Alerta</h5>
                         <button type="button" class="close btn-alert-close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -402,7 +402,7 @@ input[disabled], button[disabled] {
 
                     <div class="modal-footer">
                         <p id="alert-special"></p>
-                        <button class="btn btn-primary btn-alert-close">Close</button>
+                        <button class="btn btn-primary btn-alert-close">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -412,7 +412,7 @@ input[disabled], button[disabled] {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="confirm-title">Please Confirm</h5>
+                        <h5 class="modal-title" id="confirm-title">Por favor confirmar</h5>
                         <button type="button" class="close btn-confirm-close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -420,8 +420,8 @@ input[disabled], button[disabled] {
                     <div id="confirm-message" class="modal-body"></div>
 
                     <div class="modal-footer">
-                        <button class="btn btn-confirm-close" id="btn-confirm-close">Cancel</button>
-                        <button class="btn btn-primary" id="btn-confirm-action">Confirm</button>
+                        <button class="btn btn-confirm-close" id="btn-confirm-close">Cancelar</button>
+                        <button class="btn btn-primary" id="btn-confirm-action">Confirmar</button>
                     </div>
                 </div>
             </div>
@@ -432,19 +432,19 @@ input[disabled], button[disabled] {
       <thead>
         <tr>
           <th>#</th>
-          <th>Room ID</th>
-          <th>Owner ID</th>
+          <th>Sala ID</th>
+          <th>Creador ID</th>
           <th>Session</th>
           <th>Extra</th>
-          <th>Participants</th>
-          <th>Join</th>
+          <th>Participantes</th>
+          <th>En la sala</th>
         </tr>
       </thead>
-      <tbody id="rooms-list"><tr><td colspan=9>No active room found for this demo.</td></tr></tbody>
+      <tbody id="rooms-list"><tr><td colspan=9>No hay salas activas.</td></tr></tbody>
     </table>
   </section>
 
-  <footer style="text-align: center;">Dashboard + Video Conferencing + Chat + File Sharing</footer>
+  <footer style="text-align: center;">Dashboard + Video Conferencia + Chat + Compartir archivos</footer>
 
 <script>
 // this object is used to get uniquie rooms based on this demo
