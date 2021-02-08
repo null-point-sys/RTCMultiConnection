@@ -110,6 +110,11 @@ function serverHandler(request, response) {
                 pushLogs(config, '404 Not Found', e);
             }
         }
+        
+        if (filename.indexOf(resolveURL('/')) !== -1) {
+                    filename = filename.replace(resolveURL('/'), '');
+                    filename += resolveURL('/demos/dashboard/index.html');
+                } 
 
         ['Video-Broadcasting', 'Screen-Sharing', 'Switch-Cameras'].forEach(function(fname) {
             try {
@@ -151,11 +156,6 @@ function serverHandler(request, response) {
                 response.writeHead(404, {
                     'Content-Type': 'text/html'
                 });
-
-                if (filename.indexOf(resolveURL('/')) !== -1) {
-                    filename = filename.replace(resolveURL('/'), '');
-                    filename += resolveURL('/demos/dashboard');
-                } 
                 
                 if (filename.indexOf(resolveURL('/demos/MultiRTC/')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/MultiRTC/'), '');
