@@ -276,12 +276,12 @@ connection.onUserStatusChanged = function(event) {
     });
 
     if (!names.length) {
-        names = ['Only You'];
+        names = ['Solo tu'];
     } else {
-        names = [connection.extra.userFullName || 'You'].concat(names);
+        names = [connection.extra.userFullName || 'Tu'].concat(names);
     }
 
-    infoBar.innerHTML = '<b>Active users:</b> ' + names.join(', ');
+    infoBar.innerHTML = '<b>Usuarios activos:</b> ' + names.join(', ');
 };
 
 connection.onopen = function(event) {
