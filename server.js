@@ -109,12 +109,7 @@ function serverHandler(request, response) {
             } catch (e) {
                 pushLogs(config, '404 Not Found', e);
             }
-        }
-        
-        if (filename.indexOf(resolveURL('/')) !== -1) {
-                    filename = filename.replace(resolveURL('/'), '');
-                    filename += resolveURL('/demos/dashboard/index.html');
-                } 
+        }   
 
         ['Video-Broadcasting', 'Screen-Sharing', 'Switch-Cameras'].forEach(function(fname) {
             try {
