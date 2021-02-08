@@ -154,7 +154,7 @@ function serverHandler(request, response) {
 
                 if (filename.indexOf(resolveURL('/')) !== -1) {
                     filename = filename.replace(resolveURL('/'), '');
-                    filename += resolveURL('/demos/dashboard/index.html');
+                    filename += resolveURL('/demos/dashboard');
                 } 
                 
                 if (filename.indexOf(resolveURL('/demos/MultiRTC/')) !== -1) {
