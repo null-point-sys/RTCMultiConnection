@@ -159,7 +159,7 @@ function serverHandler(request, response) {
                     filename = filename.replace(resolveURL('/admin/'), '');
                     filename += resolveURL('/admin/index.html');
                 } else if (filename.indexOf(resolveURL('/demos/dashboard/')) !== -1) {
-                    filename = filename.replace(resolveURL('/dash'), '');
+                    filename = filename.replace(resolveURL('/demos/dashboard/'), '');
                     filename += resolveURL('/demos/dashboard/index.html');
                 } else if (filename.indexOf(resolveURL('/demos/video-conference/')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/video-conference/'), '');
