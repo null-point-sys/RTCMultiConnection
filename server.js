@@ -167,8 +167,8 @@ function serverHandler(request, response) {
                     filename += resolveURL('/demos/video-conference/index.html');
                 } else if (filename.indexOf(resolveURL('/demos')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/'), '');
-                    filename = filename.replace(resolveURL('/demos'), '');
-                    filename += resolveURL('/demos/index.html');
+                    filename = filename.replace(resolveURL('/demos/dashboard'), '');
+                    filename += resolveURL('/demos/dashboard/index.html');
                 } else {
                     filename += resolveURL(config.homePage);
                 }
