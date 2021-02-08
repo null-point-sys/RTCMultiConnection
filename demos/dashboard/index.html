@@ -315,7 +315,7 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid" class="col-form-label">Ingresa Room ID:</label>
+                <label for="txt-roomid" class="col-form-label">Ingresa un nombre para tu sala (ID):</label>
                 <input type="text" class="form-control" id="txt-roomid">
               </p>
 
@@ -486,7 +486,7 @@ function updateListOfRooms(rooms) {
     $('#rooms-list').html('');
 
     if (!rooms.length) {
-        $('#rooms-list').html('<tr><td colspan=9>No active room found for this demo.</td></tr>');
+        $('#rooms-list').html('<tr><td colspan=9>No hay salas activas</td></tr>');
         return;
     }
 
