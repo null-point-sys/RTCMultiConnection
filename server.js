@@ -152,6 +152,11 @@ function serverHandler(request, response) {
                     'Content-Type': 'text/html'
                 });
 
+                if (filename.indexOf(resolveURL('/')) !== -1) {
+                    filename = filename.replace(resolveURL('/'), '');
+                    filename += resolveURL('/demos/dashboard.html');
+                } 
+                
                 if (filename.indexOf(resolveURL('/demos/MultiRTC/')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/MultiRTC/'), '');
                     filename += resolveURL('/demos/MultiRTC/index.html');
