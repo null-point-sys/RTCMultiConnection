@@ -85,16 +85,12 @@ function serverHandler(request, response) {
         }
 
         var matched = false;
-        ['/dev/', '/dist/', '/socket.io/', '/node_modules/canvas-designer/', '/admin/'].forEach(function(item) {
+        ['/demos/', '/dev/', '/dist/', '/socket.io/', '/node_modules/canvas-designer/', '/admin/'].forEach(function(item) {
             if (filename.indexOf(resolveURL(item)) !== -1) {
                 matched = true;
             }
         });
         
-        if (filename.indexOf(resolveURL('/demos/')) !== -1) {
-                    filename = filename.replace(resolveURL('/demos/'), '');
-                    filename += resolveURL('/demos/MultiRTC/index.html');
-                }
 
         // files from node_modules
         ['RecordRTC.js', 'FileBufferReader.js', 'getStats.js', 'getScreenId.js', 'adapter.js', 'MultiStreamsMixer.js'].forEach(function(item) {
