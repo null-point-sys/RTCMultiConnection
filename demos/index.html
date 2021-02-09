@@ -297,9 +297,9 @@ input[disabled], button[disabled] {
     <img class="logo" src="/demos/logo.png" alt="RTCMultiConnection" /> <span class="logo-text">Reuniones activas</span>
 
     <div style="float: right;margin-top: 15px;">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#startRoomModel">Crea una nueva sala</button>
-      <button id="btn-show-join-hidden-room" class="top-span btn btn-secondary" data-toggle="modal" data-target="#joinRoomModel">Ingresa a un salón</button>
-      <span class="top-span">Salas activas: <span id="active-rooms">0</span></span>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#startRoomModel">Crea una reunión</button>
+      <button id="btn-show-join-hidden-room" class="top-span btn btn-secondary" data-toggle="modal" data-target="#joinRoomModel">Ingresar a una reunión</button>
+      <span class="top-span">Tableros activos: <span id="active-rooms">0</span></span>
     </div>
   </header>
 
@@ -307,7 +307,7 @@ input[disabled], button[disabled] {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="startRoomModelLabel">Crea tu sala</h5>
+          <h5 class="modal-title" id="startRoomModelLabel">Crea tu tablero</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -316,7 +316,7 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid" class="col-form-label">Ingresa un nombre para tu sala (ID):</label>
+                <label for="txt-roomid" class="col-form-label">Ingresa un nombre para tu reunión (ID):</label>
                 <input type="text" class="form-control" id="txt-roomid">
               </p>
 
@@ -326,18 +326,18 @@ input[disabled], button[disabled] {
               </p>
 
               <p style="display: none;">
-                <label for="txt-room-password" class="col-form-label">Ingresa Password de la sala:</label>
+                <label for="txt-room-password" class="col-form-label">Ingresa Password de la reunión:</label>
                 <input type="text" class="form-control" id="txt-room-password">
               </p>
 
               <a href="" style="float: right; margin-bottom: 10px; font-size: 14px;" onclick="event.preventDefault();$('.more-options').show();$(this).hide();">Más opciones</a>
 
               <p class="more-options" style="margin-bottom: 0; display: none;">
-                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Elegir un Password para la sala?</label>
+                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Elegir un Password para la reunión?</label>
               </p>
 
               <p class="more-options" style="margin-top: 0; margin-bottom: 0; display: none;">
-                <label class="col-form-label"><input type="checkbox" id="chk-hidden-room"> Ocultar Sala? (Ocultar de la lista)</label>
+                <label class="col-form-label"><input type="checkbox" id="chk-hidden-room"> Ocultar reunión? (Ocultar de la lista)</label>
               </p>
             </div>
           </form>
@@ -354,7 +354,7 @@ input[disabled], button[disabled] {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="joinRoomModelLabel">Ingresa a una sala</h5>
+          <h5 class="modal-title" id="joinRoomModelLabel">Ingresa a una reunión</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -363,7 +363,7 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid-hidden" class="col-form-label">Ingresa el nombre (ID) de la sala:</label>
+                <label for="txt-roomid-hidden" class="col-form-label">Ingresa el nombre (ID) de la reunión:</label>
                 <input type="text" class="form-control" id="txt-roomid-hidden">
               </p>
 
@@ -373,7 +373,7 @@ input[disabled], button[disabled] {
               </p>
 
               <p style="display: none;">
-                <label for="txt-room-password-hidden" class="col-form-label">Ingresa Password de la sala:</label>
+                <label for="txt-room-password-hidden" class="col-form-label">Ingresa Password de la reunión:</label>
                 <input type="text" class="form-control" id="txt-room-password-hidden">
               </p>
             </div>
@@ -433,15 +433,15 @@ input[disabled], button[disabled] {
       <thead>
         <tr>
           <th>#</th>
-          <th>Sala ID</th>
+          <th>Reunión ID</th>
           <th>Creador ID</th>
           <th>Sesión</th>
           <th>Extra</th>
           <th>Participantes</th>
-          <th>En la sala</th>
+          <th>En el salón</th>
         </tr>
       </thead>
-      <tbody id="rooms-list"><tr><td colspan=9>No hay salas activas.</td></tr></tbody>
+      <tbody id="rooms-list"><tr><td colspan=9>No hay tableros activos.</td></tr></tbody>
     </table>
   </section>
 
