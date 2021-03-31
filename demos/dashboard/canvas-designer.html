@@ -652,7 +652,7 @@ designer.appendTo(document.getElementById('widget-container'), function() {
         connection.join(params.sessionid, function(isRoomJoined, roomid, error) {
             if (error) {
                 if (error === connection.errors.ROOM_NOT_AVAILABLE) {
-                    alert('El moderador de esta sala no se encuentra en línea, escríbele para concretar o solicitar una presentación.');
+                    alert('El moderador de esta sala no se encuentra en línea, escríbele a ' +params.moderador+ 'para concretar o solicitar una presentación.');
                     return;
                 }
                 if (error === connection.errors.ROOM_FULL) {
