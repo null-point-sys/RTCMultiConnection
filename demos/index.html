@@ -2,19 +2,23 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Video Conferencing using RTCMultiConnection</title>
+  <title>Fluxiilanguages.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="shortcut icon" href="/demos/logo.png">
   <link rel="stylesheet" href="/demos/stylesheet.css">
   <script src="/demos/menu.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body onload="chargeLocalstorageline40()">
   <header>
     <a class="logo" href="/"><img src="/demos/logo.png" alt="RTCMultiConnection"></a>
-      <h1 style="text-align: left"> English Basic Room </h1>
-    <a href="/" class="menu-explorer">Menu<img src="/demos/menu-icon.png" alt="Menu"></a>
-    <button id="mute-unmute-video">Turn off your camera</button>
-    <button id="mute-unmute-voice">Mute your Voice</button>
+    <table><tr><td>
+        <h1 style="text-align: left"> English Basic Room </h1>
+        <a href="/" class="menu-explorer">Menu<img src="/demos/menu-icon.png" alt="Menu"></a>
+    </td><td>   
+        <button id="mute-unmute-video">Turn Off your Camera</button>
+        <button id="mute-unmute-voice">Mute your Voice</button>
+    </td></tr></table>
   </header>
   <section class="make-center">
     <div style="margin-top: -49px;">
@@ -190,11 +194,15 @@
 
           // mute/unmute video
           document.getElementById('mute-unmute-video').onclick = function() {
-              if (!this.muteVideo)
+              if (!this.muteVideo){
                   this.muteVideo = true;
-              else
+                  $("#mute-unmute-video").text('Turn On your Camera');
+                  $("#mute-unmute-video").css('color','red');
+              }else{
                   this.muteVideo = false;
-              
+                  $("#mute-unmute-video").text('Turn Off your Camera');
+                  $("#mute-unmute-video").css('color','green');
+              }
                 if (this.muteVideo) {
                   event.stream.mute({
                         video: true
@@ -209,11 +217,15 @@
         
             // mute/unmute voice
             document.getElementById('mute-unmute-voice').onclick = function() {
-              if (!this.muteVoice)
+              if (!this.muteVoice){
                   this.muteVoice = true;
-              else
+                   $("#mute-unmute-voice").text('Unmute your Voice');
+                   $("#mute-unmute-voice").css('color','red');
+              }else{
                   this.muteVoice = false;
-        
+                  $("#mute-unmute-voice").text('Mute your Voice');
+                   $("#mute-unmute-voice").css('color','green');
+              }
                 if (this.muteVoice) {
                   event.stream.mute({
                         audio: true,
@@ -421,7 +433,6 @@
     
     // added 2022-03 
     var chargeLocalstorageline40 = function(){
-    // trigger automático del botón open room
     connection.open(document.getElementById('room-id').value, function(isRoomOpened, roomid, error) {
             if(isRoomOpened === true) {
               showRoomURL(connection.sessionid);
@@ -429,7 +440,6 @@
             else {
               disableInputButtons(true);
               if(error === 'Room not available') {
-                // trigger automático del botón join room
                connection.join(document.getElementById('room-id').value, function(isJoinedRoom, roomid, error) {
                   if (error) {
                         //disableInputButtons(true);
