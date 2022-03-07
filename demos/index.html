@@ -8,28 +8,27 @@
   <link rel="stylesheet" href="/demos/stylesheet.css">
   <script src="/demos/menu.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body onload="chargeLocalstorageline40()">
   <header>
-    <a class="logo" href="/"><img src="/demos/logo.png" alt="RTCMultiConnection"></a>
-    <table><tr><td>
-        <h1 style="text-align: left"> English Basic Room </h1>
-        <a href="/" class="menu-explorer">Menu<img src="/demos/menu-icon.png" alt="Menu"></a>
-    </td><td>   
-        <button id="mute-unmute-video">Turn Off your Camera</button>
-        <button id="mute-unmute-voice">Mute your Voice</button>
-    </td></tr></table>
+    <div>
+        <h1>Fuxii</h1>
+        <!-- <div style="float: none"><a href="/" class="menu-explorer">Menu<img src="/demos/menu-icon.png" alt="Menu"></a> -->
+        <div class="botones" style="display:flex">
+            <button id="mute-unmute-video">Turn Off Cam</button> 
+            <button id="mute-unmute-voice">Mute Voice</button>
+        </div>
+    </div>
   </header>
   <section class="make-center">
-    <div style="margin-top: -49px;">
+    <div id="section-videos">
       <span id="recording-status" style="display: none;"></span>
       <button id="btn-stop-recording" style="display: none;">Stop Recording</button>
       <br><br>
       <input type="hidden" id="room-id" value="english-basic-room" autocorrect=off autocapitalize=off size=20 >
-      
     </div>
-    <div id="videos-container" style="margin: 20px 0;"></div>
-
+    <div id="videos-container" style="background:#000000"></div>
     <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
   </section>
 
@@ -40,7 +39,6 @@
 <!-- custom layout for HTML5 audio/video elements -->
 <link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
 <script src="/dev/getHTMLMediaElement.js"></script>
-
 <script src="/node_modules/recordrtc/RecordRTC.js"></script>
 <script>
 
@@ -196,11 +194,11 @@
           document.getElementById('mute-unmute-video').onclick = function() {
               if (!this.muteVideo){
                   this.muteVideo = true;
-                  $("#mute-unmute-video").text('Turn On your Camera');
+                  $("#mute-unmute-video").text('Turn On Cam');
                   $("#mute-unmute-video").css('color','red');
               }else{
                   this.muteVideo = false;
-                  $("#mute-unmute-video").text('Turn Off your Camera');
+                  $("#mute-unmute-video").text('Turn Off Cam');
                   $("#mute-unmute-video").css('color','green');
               }
                 if (this.muteVideo) {
@@ -219,11 +217,11 @@
             document.getElementById('mute-unmute-voice').onclick = function() {
               if (!this.muteVoice){
                   this.muteVoice = true;
-                   $("#mute-unmute-voice").text('Unmute your Voice');
+                   $("#mute-unmute-voice").text('Unmute Voice');
                    $("#mute-unmute-voice").css('color','red');
               }else{
                   this.muteVoice = false;
-                  $("#mute-unmute-voice").text('Mute your Voice');
+                  $("#mute-unmute-voice").text('Mute Voice');
                    $("#mute-unmute-voice").css('color','green');
               }
                 if (this.muteVoice) {
@@ -471,3 +469,4 @@
   <!-- <script src="https://www.webrtc-experiment.com/common.js"></script> -->
 </body>
 </html>
+
