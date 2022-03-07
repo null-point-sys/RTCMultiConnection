@@ -20,6 +20,7 @@ body {
     font-family: "Whitney SSm A", "Whitney SSm B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
     font-size: 17px;
     line-height: 1.5em;
+    background: #000000;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -36,10 +37,12 @@ body {
 }
 
 h1 {
-    font-size: 25px;
-    text-align: center;
-    color: #38a8e0;
+    font-size: 22px;
+    text-align: left;
+    color: #ffffff;
     padding: 20px;
+    margin-top: -5px;
+    text-align: center;
 }
 
 h1 p {
@@ -48,7 +51,7 @@ h1 p {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 15px;
 }
 
 .logo {
@@ -71,11 +74,11 @@ header {
 }
 
 section, header {
-    border-bottom: 1px solid #95d4e7;
+   /* border-bottom: 1px solid #cdcdcd; */
 }
 
 section, header, footer {
-    padding: 5px 20px;
+    padding: 5px;
 }
 
 ul li, nav li {
@@ -227,16 +230,52 @@ button[disabled], input[disabled] {
     }
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 400px) {
     button, input {
         display: block;
-        margin: 5px 10px;
+        width: 100%;
+        padding: 11px;
+    }
+   .logo img {
+        height: 43px;
+        margin-top: 9px;
+    }
+    .media-container {
+        width: 48% !important;
+        margin-bottom: 10px !important;
+        height: 30vh
+    }
+    .media-box video {
+        object-fit: cover !important;
+        max-height: 100% !important;
+        height: 100% !important;
+    }
+    .media-box{
+        height: 100% !important;
+    }
+    #videos-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
-
+@media all and (min-width: 401px) {
+    #section-videos{
+        margin-top: -5px
+    }
+}
+/* string identificador usuario */
+.media-box h2{
+    display: none !important;
+}
+/* control de zoom */
+.media-controls .control:first-child {
+    display: none !important;
+}
+ 
 @media all and (max-width: 500px) {
     h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -246,4 +285,11 @@ button[disabled], input[disabled] {
         border-bottom: 1px solid white!important;
         box-shadow: rgb(84, 145, 208) 0px 1px 0px 0px!important;
     }
+}
+
+.media-box{
+    border: none;
+}
+.media-container{
+    border:none !important;
 }
