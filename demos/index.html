@@ -42,7 +42,10 @@
 <script src="/node_modules/recordrtc/RecordRTC.js"></script>
 <script>
 
-    /* added 2022-03 */ localStorage.setItem('video-conference-demo', 'english-basic-room');
+    var url = window.location.href;    
+    s="_"; arr = url.split(s);
+    sala = arr[1];
+    /* added 2022-03 */ localStorage.setItem('video-conference-demo', sala);
     
     // ......................................................
     // ..................RTCMultiConnection Code.............
