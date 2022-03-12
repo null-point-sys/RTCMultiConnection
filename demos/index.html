@@ -42,10 +42,12 @@
 <script src="/node_modules/recordrtc/RecordRTC.js"></script>
 <script>
 
+    /* added 2022-03 */ 
     var url = window.location.href;    
     s="_"; arr = url.split(s);
     sala = arr[1];
-    /* added 2022-03 */ localStorage.setItem('video-conference-demo', sala);
+    localStorage.setItem('video-conference-demo', sala);
+    /* added 2022-03 */ 
     
     // ......................................................
     // ..................RTCMultiConnection Code.............
@@ -174,6 +176,11 @@
     
         var video = document.createElement('video');
     
+        /* added 2022-03 */ // para deshabilitar video  
+        // var localStream = connection.attachStreams[0];
+        // localStream.mute('video');
+        /* added 2022-03 */
+      
         try {
             video.setAttributeNode(document.createAttribute('autoplay'));
             video.setAttributeNode(document.createAttribute('playsinline'));
