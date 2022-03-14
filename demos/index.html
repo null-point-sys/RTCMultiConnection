@@ -364,10 +364,8 @@
         var roomHashURL = '#' + roomid;
         var roomQueryStringURL = '?roomid=' + roomid;
     
-        var html = '<h2 style="margin-bottom: -23px;">Unique URL for this room:</h2><br>';
-    
+        var html = '<h3 style="margin-bottom: -23px; color: gray">URL de esta sala:</h3> ';
         html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
-        html += '<br>';
         html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
     
         var roomURLsDiv = document.getElementById('room-urls');
