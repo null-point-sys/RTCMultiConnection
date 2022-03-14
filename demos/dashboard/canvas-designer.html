@@ -400,6 +400,10 @@ connection.onstream = function(event) {
 };
 
 connection.onstreamended = function(event) {
+  
+    var localStream = connection.attachStreams[0];
+    localStream.mute('video');
+  
     var video = document.querySelector('video[data-streamid="' + event.streamid + '"]');
     if (!video) {
         video = document.getElementById(event.streamid);
