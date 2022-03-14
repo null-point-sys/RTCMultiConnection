@@ -310,3 +310,7 @@ button[disabled], input[disabled] {
 .media-container{
     border:none !important;
 }
+
+video{
+  max-height: 40px !important;
+}
