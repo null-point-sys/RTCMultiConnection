@@ -16,7 +16,6 @@
         <h1>Shmai</h1>
         <!-- <div style="float: none"><a href="/" class="menu-explorer">Menu<img src="/demos/menu-icon.png" alt="Menu"></a> -->
         <div class="botones" style="text-align: center">
-            <!-- <button id="mute-unmute-video"><i class="fas fa-video fa-2x"></i></button> -->
             <button id="mute-unmute-voice"><i class="fas fa-microphone fa-2x"></i></button>
         </div>
     </div>
@@ -178,8 +177,8 @@
         var video = document.createElement('video');
     
         /* added 2022-03 */ // para deshabilitar video  
-        // var localStream = connection.attachStreams[0];
-        // localStream.mute('video');
+         var localStream = connection.attachStreams[0];
+         localStream.mute('video');
         /* added 2022-03 */
       
         try {
@@ -202,7 +201,8 @@
           connection.dontCaptureUserMedia = true;
 
           // mute/unmute video
-          document.getElementById('mute-unmute-video').onclick = function() {
+          // con <!-- <button id="mute-unmute-video"><i class="fas fa-video fa-2x"></i></button> -->
+          /* document.getElementById('mute-unmute-video').onclick = function() {
               if (!this.muteVideo){
                   this.muteVideo = true;
                   $("#mute-unmute-video").html('<i class="fas fa-video fa-2x"></i>');
@@ -222,7 +222,7 @@
                     });
                 } 
                 console.log("this.muteVideo: %s", this.muteVideo);
-            };
+            }; */
         
             // mute/unmute voice
             document.getElementById('mute-unmute-voice').onclick = function() {
