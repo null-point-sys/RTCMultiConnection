@@ -19,6 +19,7 @@
   <script src="/node_modules/fbr/FileBufferReader.js"></script>
 
   <script src="/node_modules/canvas-designer/dev/webrtc-handler.js"></script>
+  
   <script src="/node_modules/canvas-designer/canvas-designer-widget.js"></script>
   <script src="/demos/js/emojionearea.min.js"></script>
   <!-- <script src="/node_modules/multistreamsmixer/MultiStreamsMixer.js"></script> -->
@@ -401,9 +402,6 @@ connection.onstream = function(event) {
 
 connection.onstreamended = function(event) {
   
-    var localStream = connection.attachStreams[0];
-    localStream.mute('video');
-  
     var video = document.querySelector('video[data-streamid="' + event.streamid + '"]');
     if (!video) {
         video = document.getElementById(event.streamid);
@@ -773,7 +771,7 @@ function replaceScreenTrack(stream) {
     });
 
     connection.send({
-        showMainVideo: true
+        showMainVideo: false
     });
 
     // $('#main-video').show();
