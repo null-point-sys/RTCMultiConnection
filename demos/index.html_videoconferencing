@@ -7,6 +7,17 @@
   <link rel="shortcut icon" href="/demos/logo.png">
   <link rel="stylesheet" href="/demos/stylesheet.css">
   <script src="/demos/menu.js"></script>
+  
+  <script src="/demos/js/jquery.min.js"></script>
+  <link href="/demos/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/node_modules/webrtc-adapter/out/adapter.js"></script>
+  <script src="/dist/RTCMultiConnection.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/node_modules/fbr/FileBufferReader.js"></script>
+  <script src="/node_modules/canvas-designer/dev/webrtc-handler.js"></script>
+  <script src="/node_modules/canvas-designer/canvas-designer-widget.js"></script>
+  <script src="/demos/js/emojionearea.min.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
@@ -30,6 +41,7 @@
     <div id="videos-container" style="background:#000000"></div>
     <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
     <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@AlejandroZapat1/Encryptiondecryption-function?embed=true"></iframe>
+    <div id="widget-container" style="position: fixed;bottom: 0;right: 0;left: 20%;height: 100%; border-top:0; border-bottom: 0;"></div>
   </section>
 
 <script src="/dist/RTCMultiConnection.min.js"></script>
@@ -463,9 +475,68 @@
         });
     }
     
-    var stop = function(){
-        console.log(event.stream);
+    
+   // canvas in #widget-container 
+    designer.appendTo(document.getElementById('widget-container'), function() {
+    if (params.open === true || params.open === 'true') {
+            var tempStreamCanvas = document.getElementById('temp-stream-canvas');
+            var tempStream = tempStreamCanvas.captureStream();
+            tempStream.isScreen = true;
+            tempStream.streamid = tempStream.id;
+            tempStream.type = 'local';
+            connection.attachStreams.push(tempStream);
+            window.tempStream = tempStream;
+
+            connection.extra.roomOwner = true;
+            connection.open(params.sessionid, function(isRoomOpened, roomid, error) {
+                if (error) {
+                    if (error === connection.errors.ROOM_NOT_AVAILABLE) {
+                        alert('Someone already created this room. Please either join or create a separate room.');
+                        return;
+                    }
+                    alert(error);
+                }
+
+                connection.socket.on('disconnect', function() {
+                    location.reload();
+                });
+            });
+    } else {
+        connection.join(params.sessionid, function(isRoomJoined, roomid, error) {
+            if (error) {
+                if (error === connection.errors.ROOM_NOT_AVAILABLE) {
+                    alert('El moderador de esta sala no se encuentra en línea, escríbele a ' +params.moderador+ ' para concretar o solicitar una presentación.');
+                    return;
+                }
+                if (error === connection.errors.ROOM_FULL) {
+                    alert('Room is full.');
+                    return;
+                }
+                if (error === connection.errors.INVALID_PASSWORD) {
+                    connection.password = prompt('Please enter room password.') || '';
+                    if(!connection.password.length) {
+                        alert('Invalid password.');
+                        return;
+                    }
+                    connection.join(params.sessionid, function(isRoomJoined, roomid, error) {
+                        if(error) {
+                            alert(error);
+                        }
+                    });
+                    return;
+                }
+                alert(error);
+            }
+
+            connection.socket.on('disconnect', function() {
+                location.reload();
+            });
+        });
     }
+});
+
+    
+    
 
 </script>
 
