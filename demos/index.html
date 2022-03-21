@@ -476,6 +476,42 @@
         });
     }
     
+    
+// here goes canvas designer
+var designer = new CanvasDesigner();
+
+// you can place widget.html anywhere
+designer.widgetHtmlURL = '/node_modules/canvas-designer/widget.html';
+designer.widgetJsURL = '/node_modules/canvas-designer/widget.min.js'
+
+designer.addSyncListener(function(data) {
+    connection.send(data);
+});
+
+designer.setSelected('pencil');
+
+designer.setTools({
+    pencil: true,
+    text: true,
+    image: true,
+    pdf: true,
+    eraser: true,
+    line: true,
+    arrow: true,
+    dragSingle: true,
+    dragMultiple: true,
+    arc: true,
+    rectangle: true,
+    quadratic: false,
+    bezier: true,
+    marker: true,
+    zoom: false,
+    lineWidth: false,
+    colorsPicker: false,
+    extraOptions: false,
+    code: false,
+    undo: true
+});
     connection.onmessage = function(event) {
     if(event.data.showMainVideo) {
         // $('#main-video').show();
