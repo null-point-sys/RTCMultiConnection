@@ -311,6 +311,6 @@ button[disabled], input[disabled] {
     border:none !important;
 }
 
-video{
+/*video{
   max-height: 40px !important;
-}
+}*/
