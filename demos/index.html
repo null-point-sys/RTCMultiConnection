@@ -59,7 +59,7 @@
     var url = window.location.href;    
     s="_"; arr = url.split(s);
     sala = arr[1];
-    localStorage.setItem('canvas-dashboard-demo', sala);
+    localStorage.setItem('video-conference-demo', sala);
     /* added 2022-03 */ 
     
     // ......................................................
@@ -74,7 +74,7 @@
     // comment-out below line if you do not have your own socket.io server
     // connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
     
-    connection.socketMessageEvent = 'canvas-dashboard-demo';
+    connection.socketMessageEvent = 'video-conference-demo';
     
     connection.session = {
         audio: true,
