@@ -476,6 +476,55 @@
         });
     }
     
+    connection.onmessage = function(event) {
+    if(event.data.showMainVideo) {
+        // $('#main-video').show();
+        $('#screen-viewer').css({
+            top: $('#widget-container').offset().top,
+            left: $('#widget-container').offset().left,
+            width: $('#widget-container').width(),
+            height: $('#widget-container').height()
+        });
+        $('#screen-viewer').show();
+        return;
+    }
+
+    if(event.data.hideMainVideo) {
+        // $('#main-video').hide();
+        $('#screen-viewer').hide();
+        return;
+    }
+
+    if(event.data.typing === true) {
+        $('#key-press').show().find('span').html(event.extra.userFullName + ' is typing');
+        return;
+    }
+
+    if(event.data.typing === false) {
+        $('#key-press').hide().find('span').html('');
+        return;
+    }
+
+    if (event.data.chatMessage) {
+        appendChatMessage(event);
+        return;
+    }
+
+    if (event.data.checkmark === 'received') {
+        var checkmarkElement = document.getElementById(event.data.checkmark_id);
+        if (checkmarkElement) {
+            checkmarkElement.style.display = 'inline';
+        }
+        return;
+    }
+
+    if (event.data === 'plz-sync-points') {
+        designer.sync();
+        return;
+    }
+
+    designer.syncData(event.data);
+  };
     
    // canvas in #widget-container 
     designer.appendTo(document.getElementById('widget-container'), function() {
