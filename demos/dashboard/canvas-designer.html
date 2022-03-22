@@ -233,7 +233,7 @@ connection.maxParticipantsAllowed = 1000;
 // set value 2 for one-to-one connection
 // connection.maxParticipantsAllowed = 2;
 
-  connection.removeStream('screen');
+  connection.dontCaptureUserMedia = true;
   
 // here goes canvas designer
 var designer = new CanvasDesigner();
