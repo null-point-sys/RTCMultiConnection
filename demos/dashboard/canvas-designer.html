@@ -371,7 +371,7 @@ connection.onmessage = function(event) {
 
 // extra code
 
-connection.onstream = function(event) {
+/* connection.onstream = function(event) {
     
   var localStream = connection.attachStreams[0];
   localStream.mute('video');
@@ -414,7 +414,7 @@ connection.onstreamended = function(event) {
         video.srcObject = null;
         video.style.display = 'none';
     }
-};
+}; */
 
 var conversationPanel = document.getElementById('conversation-panel');
 
