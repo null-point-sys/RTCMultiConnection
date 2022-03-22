@@ -371,7 +371,7 @@ connection.onmessage = function(event) {
 
 // extra code
 
-/* connection.onstream = function(event) {
+connection.onstream = function(event) {
     
   var localStream = connection.attachStreams[0];
   localStream.mute('video');
@@ -414,7 +414,7 @@ connection.onstreamended = function(event) {
         video.srcObject = null;
         video.style.display = 'none';
     }
-}; */
+};
 
 var conversationPanel = document.getElementById('conversation-panel');
 
@@ -686,7 +686,7 @@ designer.appendTo(document.getElementById('widget-container'), function() {
     }
 });
 
-function addStreamStopListener(stream, callback) {
+/*  function addStreamStopListener(stream, callback) {
     stream.addEventListener('ended', function() {
         callback();
         callback = function() {};
@@ -809,7 +809,7 @@ $('#btn-share-screen').click(function() {
     else {
         alert('getDisplayMedia API is not available in this browser.');
     }
-});
+}); */
 </script>
 </body>
 </html>
