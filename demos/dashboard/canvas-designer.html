@@ -631,7 +631,10 @@ if(!!params.password) {
 }
 
 designer.appendTo(document.getElementById('widget-container'), function() {
-    if (params.open === true || params.open === 'true') {
+    /* if (params.open === true || params.open === 'true') { */
+  
+           alert('El moderador de esta sala no se encuentra en línea, escríbele a ' +params.moderador+ ' para concretar o solicitar una presentación.');                
+  
             var tempStreamCanvas = document.getElementById('temp-stream-canvas');
             var tempStream = tempStreamCanvas.captureStream();
             tempStream.isScreen = true;
@@ -654,7 +657,7 @@ designer.appendTo(document.getElementById('widget-container'), function() {
                     location.reload();
                 });
             });
-    } else {
+    /* } else {
         connection.join(params.sessionid, function(isRoomJoined, roomid, error) {
             if (error) {
                 if (error === connection.errors.ROOM_NOT_AVAILABLE) {
@@ -685,7 +688,7 @@ designer.appendTo(document.getElementById('widget-container'), function() {
                 location.reload();
             });
         });
-    }
+    } */
 });
 
  function addStreamStopListener(stream, callback) {
