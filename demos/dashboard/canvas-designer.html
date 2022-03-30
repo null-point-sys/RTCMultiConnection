@@ -813,6 +813,12 @@ $('#btn-share-screen').click(function() {
         alert('getDisplayMedia API is not available in this browser.');
     }
 });
+  
+  if(!connection.isInitiator){
+    $('#image-icon').hide();
+    btn-attach-file
+  }
+  
 </script>
 </body>
 </html>
