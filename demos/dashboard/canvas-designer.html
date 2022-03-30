@@ -315,6 +315,12 @@ connection.onopen = function(event) {
     document.getElementById('btn-chat-message').disabled = false;
     document.getElementById('btn-attach-file').style.display = 'inline-block';
     document.getElementById('btn-share-screen').style.display = 'inline-block';
+
+   if(params.open == false){
+    $('#image-icon').hide();
+    //btn-attach-file
+  }
+
 };
 
 connection.onclose = connection.onerror = connection.onleave = function(event) {
@@ -814,10 +820,7 @@ $('#btn-share-screen').click(function() {
     }
 });
   
-  if(params.open == false){
-    $('#image-icon').hide();
-    //btn-attach-file
-  }
+ 
   
 </script>
 </body>
