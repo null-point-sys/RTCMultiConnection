@@ -377,7 +377,7 @@ connection.onmessage = function(event) {
 connection.onstream = function(event) {
     
   var localStream = connection.attachStreams[0];
-  localStream.mute('video');
+  //localStream.mute('video');
   
     if (event.stream.isScreen && !event.stream.canvasStream) {
         $('#screen-viewer').get(0).srcObject = event.stream;
