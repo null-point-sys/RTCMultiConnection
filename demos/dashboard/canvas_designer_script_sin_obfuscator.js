@@ -45,7 +45,7 @@ designer.addSyncListener(function(data) {
 });
 
 designer.setSelected('pencil');
-
+if (params.open === true || params.open === 'true') {
 designer.setTools({
     pencil: true,
     text: true,
@@ -67,7 +67,30 @@ designer.setTools({
     extraOptions: false,
     code: false,
     undo: true
-});
+}); 
+} else {
+  designer.setTools({
+    pencil: true,
+    text: true,
+    eraser: true,
+    line: true,
+    arrow: true,
+    dragSingle: true,
+    dragMultiple: true,
+    arc: true,
+    rectangle: true,
+    quadratic: false,
+    bezier: true,
+    marker: true,
+    zoom: false,
+    lineWidth: false,
+    colorsPicker: false,
+    extraOptions: false,
+    code: false,
+    undo: true
+});  
+}
+  
 
 // here goes RTCMultiConnection
 
