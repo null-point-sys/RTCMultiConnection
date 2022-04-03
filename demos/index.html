@@ -319,7 +319,7 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid" class="col-form-label">Ingresa un nombre para tu reunión (ID):</label>
+                <label for="txt-roomid" class="col-form-label">Ingresa un nombre para tu presentación:</label>
                 <input type="text" class="form-control" id="txt-roomid">
               </p>
 
@@ -329,14 +329,14 @@ input[disabled], button[disabled] {
               </p>
 
               <p style="display: none;">
-                <label for="txt-room-password" class="col-form-label">Ingresa Password de la reunión:</label>
+                <label for="txt-room-password" class="col-form-label">Ingresa Password de la presentación:</label>
                 <input type="text" class="form-control" id="txt-room-password">
               </p>
 
               <a href="" style="float: right; margin-bottom: 10px; font-size: 14px;" onclick="event.preventDefault();$('.more-options').show();$(this).hide();">Protege tu presentación con contraseña</a>
 
               <p class="more-options" style="margin-bottom: 0; display: none;">
-                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Elegir un Password para la reunión?</label>
+                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Elegir una contraseña para la presentación?</label>
               </p>
 
             </div>
@@ -344,7 +344,7 @@ input[disabled], button[disabled] {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" id="btn-create-room">Crear</button>
+          <button type="button" class="btn btn-primary" id="btn-create-room">Crear tablero</button>
         </div>
       </div>
     </div>
@@ -354,7 +354,7 @@ input[disabled], button[disabled] {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="joinRoomModelLabel">Ingresa a una reunión</h5>
+          <h5 class="modal-title" id="joinRoomModelLabel">Ingresa a una presentación</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -363,7 +363,7 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid-hidden" class="col-form-label">Ingresa el nombre (ID) de la reunión:</label>
+                <label for="txt-roomid-hidden" class="col-form-label">Ingresa el nombre de la presentación:</label>
                 <input type="text" class="form-control" id="txt-roomid-hidden">
               </p>
 
@@ -433,9 +433,9 @@ input[disabled], button[disabled] {
       <thead>
         <tr style="background: #e1e1e9">
           <th>#</th>
-          <th>Reunión ID</th>
-          <th>Creador ID</th>
-          <th>Extra</th>
+          <th>Presentación</th>
+          <th>Creador</th>
+          <th>Datos de la sesión</th>
           <th>Participantes</th>
           <th>En el Tablero</th>
         </tr>
