@@ -526,7 +526,7 @@ function updateListOfRooms(rooms) {
           html += '<td><span style="border-bottom: 1px dotted red; color: red;">Room is full</span></td>';
         }
         else {
-          html += '<td><button class="btn join-room" data-roomid="' + room.sessionid + '" data-password-protected="' + (room.isPasswordProtected === true ? 'true' : 'false') +'">Join</button></td>';
+          html += '<td><button class="btn join-room" data-roomid="' + room.sessionid + '" data-password-protected="' + (room.isPasswordProtected === true ? 'true' : 'false') +'">Participar</button></td>';
         }
         
         $(tr).html(html);
