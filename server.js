@@ -266,10 +266,20 @@ if (isUseHTTPs) {
     httpApp = httpServer.createServer(serverHandler);
 }
 
-RTCMultiConnectionServer.beforeHttpListen(httpApp, config);
+/*RTCMultiConnectionServer.beforeHttpListen(httpApp, config);
 httpApp = httpApp.listen(process.env.PORT || PORT, process.env.IP || "0.0.0.0", function() {
     RTCMultiConnectionServer.afterHttpListen(httpApp, config);
+});*/
+const port = process.env.PORT || 3000;
+const host = process.env.IP || "0.0.0.0";
+
+RTCMultiConnectionServer.beforeHttpListen(httpApp, config);
+
+httpApp = httpApp.listen(port, host, function() {
+    console.log(`Servidor escuchando en http://${host}:${port}`);
+    RTCMultiConnectionServer.afterHttpListen(httpApp, config);
 });
+
 
 // --------------------------
 // socket.io codes goes below
