@@ -19,7 +19,7 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "main": "./dist/RTCMultiConnection.js",
+  "main": "server.js",
   "keywords": [
     "peer-to-peer",
     "peer2peer",
