@@ -189,23 +189,23 @@ function serverHandler(request, response) {
         }
 
         fs.readFile(filename, 'binary', function(err, file) {
-            if (err) {
-                response.writeHead(500, {
-                    'Content-Type': 'text/plain'
-                });
-                response.write('404 Not Found: ' + path.join('/', uri) + '\n');
+             if (err) {
+                if (!response.headersSent) {
+                    response.writeHead(500, { 'Content-Type': 'text/plain' });
+                    response.write('404 Not Found: ' + path.join('/', uri) + '\n');
+                }
                 response.end();
                 return;
             }
-
+        
             try {
                 file = file.replace('connection.socketURL = \'/\';', 'connection.socketURL = \'' + config.socketURL + '\';');
             } catch (e) {}
-
-            response.writeHead(200, {
-                'Content-Type': contentType
-            });
-            response.write(file, 'binary');
+        
+            if (!response.headersSent) {
+                response.writeHead(200, { 'Content-Type': contentType });
+                response.write(file, 'binary');
+            }
             response.end();
         });
     } catch (e) {
